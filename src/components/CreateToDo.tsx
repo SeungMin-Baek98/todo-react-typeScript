@@ -50,9 +50,20 @@ const Button = styled.button`
   }
 `;
 
+const ErrorMessage = styled.span`
+  color: ${(props) => props.theme.accentColor};
+  font-size: 14px;
+  margin-top: 5px;
+`;
+
 function CreateToDo() {
   const setToDos = useSetRecoilState(toDoState);
-  const { register, setValue, handleSubmit } = useForm<IForm>();
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>();
   const category = useRecoilValue(categoryState);
 
   const handleValid = ({ toDo }: IForm) => {
@@ -64,14 +75,17 @@ function CreateToDo() {
   };
 
   return (
-    <Form onSubmit={handleSubmit(handleValid)}>
-      <Input
-        {...register("toDo", { required: "Please write a To Do" })}
-        type="text"
-        placeholder="Write a To Do"
-      />
-      <Button>Add</Button>
-    </Form>
+    <>
+      <Form onSubmit={handleSubmit(handleValid)}>
+        <Input
+          {...register("toDo", { required: "Please write To Do" })}
+          type="text"
+          placeholder="Write To Do"
+        />
+        <Button>Add</Button>
+      </Form>
+      {errors.toDo && <ErrorMessage>{errors.toDo.message}</ErrorMessage>}
+    </>
   );
 }
 
