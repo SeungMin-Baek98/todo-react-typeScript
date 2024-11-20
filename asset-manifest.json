@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/todo-react-typeScript/static/js/main.fd4976f8.js",
+    "main.js": "/todo-react-typeScript/static/js/main.fbe930cd.js",
     "index.html": "/todo-react-typeScript/index.html",
-    "main.fd4976f8.js.map": "/todo-react-typeScript/static/js/main.fd4976f8.js.map"
+    "main.fbe930cd.js.map": "/todo-react-typeScript/static/js/main.fbe930cd.js.map"
   },
   "entrypoints": [
-    "static/js/main.fd4976f8.js"
+    "static/js/main.fbe930cd.js"
   ]
 }
